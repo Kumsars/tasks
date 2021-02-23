@@ -1,3 +1,6 @@
+var task1_output = document.getElementById("textarea1");
+
+
 function task1(){
     var task1_input1 = document.getElementById("T1I1").value;
 
@@ -14,10 +17,10 @@ function task1(){
             },
         body: JSON.stringify(object),
     })
-  
+    .then(response => response.json())
     .then(data => {
-        console.log('Success:', data);
-        alert("Data is successfully sent!");
+        task1_output.innerText = data;
+        console.log(data);
     })
     .catch((error) => {
     console.error('Error:', error);

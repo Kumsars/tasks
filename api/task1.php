@@ -7,7 +7,9 @@
 
     $data = json_decode(file_get_contents("php://input"));
     $number =  $data->number ;
+    $array = array();
     
+
     $count = 0;  
     $num = 2;  
     while ($count < $number) {  
@@ -17,11 +19,14 @@
             $div_count++;  
             }  
         }  
-        if ($div_count<3) {  
-        echo $num." , ";  
+        if ($div_count<3) { 
+            array_push($array,$num); 
         $count=$count+1;  
         }  
         $num=$num+1;  
     }  
+
+   // json_encode($array);
+    print_r(json_encode($array));
     
 ?>
