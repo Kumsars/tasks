@@ -64,9 +64,50 @@
     </div>
 
     <h1>Task 3</h1>
-    <div class="form-group"></div>
+    <div class="form-group">
+        <h4>Enter a text and you will see how many symbols and words you have used </h4>
+        <div class="row">
+            <div class="col">
+                <p>Enter: </p>
+                <input class="form-control" type="text" id="T3I1">
+            </div>
+            <div class="col">
+                <P></P>
+                <br>
+                <button class="btn btn-primary form-control" id="btn3" onclick="task3()">Lets see</button>
+            </div>
+            <div class="col">
+                <p>Output: </p>
+                <textarea class="form-control" name="" id="textarea3" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+
     <h1>Task 4</h1>
-    <div class="form-group"></div>
+    <div class="form-group">
+        <h4>Enter 2 numbers and you will get a random number in this range </h4>
+        <div class="row">
+            <div class="col">
+                <P>1.</P>
+                <input class="form-control" type="number" id="T4I1">
+                
+            </div>
+            <div class="col">
+                <P>2.</P>
+                <input class="form-control" type="number" id="T4I2">
+            
+            </div>
+            <div class="col">
+                <P></P>
+                <br>
+                <button class="btn btn-primary form-control" id="btn4" onclick="task4()">Lets see</button>
+            </div>
+            <div class="col">
+                <p>Output:</p>
+                <textarea readonly class="form-control" name="" id="textarea4" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
     <h1>Task 5</h1>
     <div class="form-group"></div>
 </div>
@@ -77,7 +118,7 @@
 </body>
 <style>
     body{text-align: center;  background-image: linear-gradient(100deg, rgb(190, 190, 190), rgb(42, 255, 70));}
-    #textarea1, #textarea2{height:40px;}
+    #textarea1, #textarea2, #textarea3, #textarea4{height:40px;}
     #btn1{height:40px;}
     .row{display: inline-flex;}
 </style>

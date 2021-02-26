@@ -5,4 +5,19 @@
     header("Access-Control-Max-Age: 3600");
     header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
+
+    $data = json_decode(file_get_contents("php://input"));
+    $result = array();
+
+    //Word count
+    $words =  $data->text;
+    $words = str_word_count($words, 0);
+    array_push($result, $words);
+   
+    //symbols
+    $symbols = $data->text;
+    $symbols = strlen($symbols) - substr_count($symbols, ' ');
+    array_push($result, $symbols);
+
+    print_r(json_encode($result));
     ?>

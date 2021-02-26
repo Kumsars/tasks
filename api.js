@@ -1,6 +1,9 @@
 //Output fields
 var task1_output = document.getElementById("textarea1");
 var task2_output = document.getElementById("textarea2");
+var task3_output = document.getElementById("textarea3");
+var task4_output = document.getElementById("textarea4");
+
 
 function task1(){
     var task1_input1 = document.getElementById("T1I1").value;
@@ -52,6 +55,67 @@ function task2(){
       
         task2_output.innerText = data;
         console.log(data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert("Sorry! Nomething went wrong. We will fix it!");
+    });
+}
+function task3(){
+    var task3_input1 = document.getElementById("T3I1").value;
+ 
+
+    var object = {};
+
+    object['text'] = task3_input1;
+    
+    //console.log(object['number']);
+
+    fetch('api/task3.php', {
+        method: 'POST', // or 'PUT'
+        headers: 
+            {
+            'Content-Type': 'application/json',
+            },
+        body: JSON.stringify(object),
+    })
+    .then(response => response.json())
+    .then(data => {
+      
+        task3_output.innerText = "Words: "+ data[0] +" Symbols: "+data[1];
+       // console.log(data[1]);
+    })
+    .catch((error) => {
+    console.error('Error:', error);
+    alert("Sorry! Nomething went wrong. We will fix it!");
+    });
+}
+
+function task4(){
+    var task4_input1 = document.getElementById("T4I1").value;
+    var task4_input2 = document.getElementById("T4I2").value;
+ 
+
+    var object = {};
+
+    object['nr1'] = task4_input1;
+    object['nr2'] = task4_input2;
+    
+    //console.log(object['number']);
+
+    fetch('api/task4.php', {
+        method: 'POST', // or 'PUT'
+        headers: 
+            {
+            'Content-Type': 'application/json',
+            },
+        body: JSON.stringify(object),
+    })
+    .then(response => response.json())
+    .then(data => {
+      
+        task4_output.innerText = data;
+       // console.log(data[1]);
     })
     .catch((error) => {
     console.error('Error:', error);

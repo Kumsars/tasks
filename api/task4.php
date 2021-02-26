@@ -5,4 +5,11 @@
     header("Access-Control-Max-Age: 3600");
     header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
     
+    $data = json_decode(file_get_contents("php://input"));
+
+    $range1 = $data->nr1;
+    $range2 = $data->nr2;
+
+    $randomNumber = rand($range1, $range2);
+    print_r(json_encode($randomNumber));
     ?>
