@@ -3,6 +3,7 @@ var task1_output = document.getElementById("textarea1");
 var task2_output = document.getElementById("textarea2");
 var task3_output = document.getElementById("textarea3");
 var task4_output = document.getElementById("textarea4");
+var task5_output = document.getElementById("textarea5");
 
 
 function task1(){
@@ -115,6 +116,38 @@ function task4(){
     .then(data => {
       
         task4_output.innerText = data;
+       // console.log(data[1]);
+    })
+    .catch((error) => {
+    console.error('Error:', error);
+    alert("Sorry! Nomething went wrong. We will fix it!");
+    });
+}
+
+function task5(){
+    var task5_input1 = document.getElementById("T5I1").value;
+   
+ 
+
+    var object = {};
+
+    object['text'] = task5_input1;
+    
+    
+    //console.log(object['number']);
+
+    fetch('api/task5.php', {
+        method: 'POST', // or 'PUT'
+        headers: 
+            {
+            'Content-Type': 'application/json',
+            },
+        body: JSON.stringify(object),
+    })
+    .then(response => response.json())
+    .then(data => {
+      
+        task5_output.innerText = data;
        // console.log(data[1]);
     })
     .catch((error) => {
